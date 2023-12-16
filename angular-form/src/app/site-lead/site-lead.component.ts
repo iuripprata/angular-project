@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LeadService } from '../services/site-lead.service';
 
 interface Lead {
   name: string;
@@ -15,10 +16,17 @@ export class SiteLeadComponent {
   lead: Lead = { name: '', email: '', phone: '' };
   showSuccessMessage = false;
 
+  constructor(private leadService: LeadService) {}
+
   submitForm() {
-    // Aqui você pode adicionar a lógica para enviar os dados para o servidor.
-    // Por exemplo, usando um serviço HTTP.
-    // Simulando um sucesso para este exemplo:
-    this.showSuccessMessage = true;
+    this.leadService.sendLeadData(this.lead).subscribe(
+      response => {
+        console.log(response); // Exibe a resposta do servidor (opcional)
+        this.showSuccessMessage = true;
+      },
+      error => {
+        console.error(error); // Trate erros, se necessário
+      }
+    );
   }
 }

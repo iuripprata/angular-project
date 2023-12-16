@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { SiteLeadComponent } from './site-lead/site-lead.component';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+import { LeadService } from './services/site-lead.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +17,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule // Adicione o módulo HTTP
   ],
-  providers: [],
+  providers: [LeadService], // Adicione o serviço aos provedores
   bootstrap: [AppComponent]
 })
 export class AppModule { }
