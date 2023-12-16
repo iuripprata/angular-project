@@ -1,0 +1,17 @@
+<form (ngSubmit)="submitForm()" #leadForm="ngForm">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="lead.name" required>
+  
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="lead.email" required>
+  
+    <label for="phone">Telefone:</label>
+    <input type="tel" id="phone" name="phone" [(ngModel)]="lead.phone" required>
+  
+    <button type="submit" [disabled]="leadForm.invalid">Enviar</button>
+  </form>
+  
+  <div *ngIf="showSuccessMessage">
+    <p>Mensagem enviada com sucesso!</p>
+  </div>
+  
