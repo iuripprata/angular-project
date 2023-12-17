@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "site-lead-angular"
+  },
+  "targets": {
+    "site-lead-angular": {
+      "hosting": {
+        "angular-form": [
+          "site-lead-angular"
+        ]
+      }
+    }
   }
 }

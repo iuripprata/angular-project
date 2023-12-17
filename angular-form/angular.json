@@ -99,6 +99,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "angular-form:build:production",
+              "serveTarget": "angular-form:serve:production"
+            },
+            "development": {
+              "buildTarget": "angular-form:build:development",
+              "serveTarget": "angular-form:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

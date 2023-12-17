@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { SiteLeadComponent } from './site-lead/site-lead.component';
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +25,8 @@ import { LeadService } from './services/site-lead.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule // Adicione o módulo HTTP
+    HttpClientModule, // Adicione o módulo HTTP
+    AngularFirestoreModule,
   ],
   providers: [LeadService], // Adicione o serviço aos provedores
   bootstrap: [AppComponent]
