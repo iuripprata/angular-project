@@ -334,5 +334,10 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <app-lead-form></app-lead-form>
+<div *ngFor="let item of items$ | async as items">
+  <div *ngIf="isFirebaseItem(item)">
+    {{ item.name }}
+  </div>
+</div>
 
 <router-outlet></router-outlet>
